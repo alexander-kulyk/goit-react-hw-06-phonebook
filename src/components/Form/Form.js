@@ -1,19 +1,32 @@
 import PropTypes from 'prop-types';
-
-import { Formik } from 'formik'
 import { nanoid } from 'nanoid';
 import { Button, FormContact, Input, Label } from "./Form.styled";
+import { useDispatch } from 'react-redux';
+import { addNewCotact } from 'redux/phoneBookSlice';
 
 
 const idInputName = nanoid();
 const idInputNamber = nanoid();
 
-export const ContactForm = ({handleSubmit}) =>{
+
+
+
+export const ContactForm = () =>{
+    const dispatch  = useDispatch();
+    
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        const name = e.currentTarget.elements.name.value;
+        const number = e.currentTarget.elements.number.value;
+
+        dispatch(addNewCotact({name, number})); 
+    };
+
+    
    
     return(
-        <Formik initialValues={{ name:'', number:'' }} onSubmit={handleSubmit}>
-               
-                <FormContact>
+        <FormContact onSubmit={handleSubmit}>
                     <Label htmlFor={idInputName}>
                     Name  
                     </Label>
@@ -41,11 +54,13 @@ export const ContactForm = ({handleSubmit}) =>{
                             />
 
                         <Button  type="submit">Add Contact</Button>
-                </FormContact> 
-        </Formik>
+                </FormContact>
         )
     }
 
     ContactForm.propTypes = {
         handleSubmit: PropTypes.func.isRequired,
     }
+
+
+    //initialValues={{ name:'', number:'' }}
