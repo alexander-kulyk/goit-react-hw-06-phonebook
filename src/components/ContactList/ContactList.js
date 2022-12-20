@@ -1,4 +1,3 @@
-import PropTypes  from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
 import { deleteContact } from "redux/phoneBookSlice";
 import { ContactList, ItemsContact,DeleteBtn, Notification } from "./ContactList.styled"
@@ -41,21 +40,3 @@ export const Contact = () =>{
     )
 }
 
-
-Contact.propTypes = {
-    visibleContact: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            number: PropTypes.string.isRequired,
-        })),
-    deleteContact: PropTypes.func.isRequired,
-    contacts: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            number: PropTypes.string.isRequired,
-        }),
-    )
-    
-}

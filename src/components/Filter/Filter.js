@@ -26,9 +26,6 @@ export const Filter = ({title}) =>{
 
 Filter.propTypes = {
     title: PropTypes.string.isRequired,
-    filter: PropTypes.string.isRequired,
-    handleFindContact: PropTypes.func.isRequired,
-
 }
 
 
