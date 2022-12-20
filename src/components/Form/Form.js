@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Button, FormContact, Input, Label } from "./Form.styled";
 import { useDispatch } from 'react-redux';
@@ -56,11 +55,6 @@ export const ContactForm = () =>{
                         <Button  type="submit">Add Contact</Button>
                 </FormContact>
         )
-    }
+}
 
-    ContactForm.propTypes = {
-        handleSubmit: PropTypes.func.isRequired,
-    }
-
-
-    //initialValues={{ name:'', number:'' }}
+    
