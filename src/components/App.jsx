@@ -7,11 +7,9 @@ import Container from "./Container/Conteiner.styled";
 import { ContactForm } from "./Form/Form";
 import { Filter } from "./Filter/Filter";
 import { PrimaryTitle, SecondaryTitle } from "./Titles/Titles";
-//import { useLocalStorage } from "../hooks/useLocalStorage";
 
 import 'react-toastify/dist/ReactToastify.css';
 
-//const CONTACTS_KEY = 'contacts';
 export const initContacts =[
       {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
       {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},

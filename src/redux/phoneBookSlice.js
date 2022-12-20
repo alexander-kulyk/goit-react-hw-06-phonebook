@@ -6,8 +6,6 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
-
 const phoneBookSlice = createSlice({
     name: 'phoneBook',
     initialState:{
